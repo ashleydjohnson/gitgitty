@@ -13,7 +13,7 @@
   <!--link to font awesome, use npm install font-awesome@4.7.0 in terminal-->
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/codeChallengeCSS.css" />
   <title>NuCamp: A Better Way To Camp</title>
 </head>
 
@@ -30,69 +30,14 @@
           <h2>a better way to camp</h2>
         </div>
         <div class="col-md-4 col-xl-2 mt-4 text-nowrap">
-          <a class="btn btn-info btn-lg" role="button" data-toggle="modal" data-target="#reserveModal"
-             title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
+          <a class="btn btn-info btn-lg" href="#reserveForm" role="button" data-toggle="tooltip" data-placement="bottom"
+            data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
           <!--data-toggle="tooltip" and the title attributes are required. data-html="true" is necessary if you want html in the code-->
         </div>
       </div>
     </div>
   </header>
-<div id="reserveModal" class="modal fade" role="dialog"> 
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header bg-info text-white">
-          <h3 class="modal-title">Reserve a Campsite</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <form>
-              <div class="form-group row">
-              <label class="col-md-6 col-form-label" for="numCampers">Number of Campers</label>
 
-              <div class="col-sm-6">
-                <select class="form-control" id="numCampers">
-                  <option>Select...</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                </select>
-              </div>
-
-            </div>
-            <div class="form-group row">
-              <label class="col-md-6 col-form-label" for="date" placeholder="date">Date</label>
-
-              <div class="col-sm-6">
-                <input class="form-control" type="date" id="date" name="date">
-              </div>
-            <div class="form-group row">
-              <label class="col-form-label col-sm-6" for="siteType">Campsite Type</label>
-            </div>
-            <div class="col-2 btn btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-success active">
-                <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked>Tent
-              </label>
-              <label class="btn btn-primary">
-                <input type="radio" name="siteType" id="siteRV" autocomplete="off">RV
-              </label>
-            </div>
-            </div>
-            <div class="form-group row">
-              <div class="ml-class-2 col">
-                <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary">Search</button>
-              </div>
-            </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
     <!-- navbar is base class for component, navbar-dark indicates the background color is dark, sticky-top makes it stay at the top of the page--->
     <div class="container">
@@ -168,10 +113,9 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row row-content">
-      <div class="col col-md-8 mx-auto">
-        <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+  
+   
+        <div id="homeCarousel" class="carousel slide carousel-fade" data-ride="carousel">
           <ol class="carousel-indicators"> <!--this adds the indicator for which picture is being displayed-->
             <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#homeCarousel" data-slide-to="1"></li>
@@ -201,16 +145,15 @@
             </div>
           </div>
           <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
+            <i class="fa fa-angle-double-left"></i>
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
+            <i class="fa fa-angle-double-right"></i>
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </div>
-    </div>
+     
 
     <div class="row row-content align-items-center">
       <!--align-items-center is used on rows and will align column content vertically-->
@@ -245,7 +188,7 @@
       <div class="media">
         <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="React Lake" />
       </div>
-    </div>
+
       <div class="row row-content align-items-center">
         <div class="col-sm-4 order-sm-last col-md-3">
           <h2 class="text-sm-right">Our Community Partners</h2>
@@ -261,16 +204,15 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
 
-  <!-- Reservation form that was at the bottom in the footer, converted to modal
-    <div class="row row-content"> 
+  
+  <div class="row for-content">
     <div class="col-sm-6 mx-auto">
       <div class="card">
         <h3 class="card-header bg-info text-white">Reserve Campsite</h3>
         <div class="card-body">
           <form id="reserveForm">
-            
             <div class="form-group row">
               <label class="col-md-6 col-form-label" for="numCampers">Number of Campers</label>
 
@@ -299,11 +241,12 @@
                 <button type="submit" class="btn btn-primary">Search</button>
               </div>
             </div>
-          </form>  
+          </form>
         </div>
       </div>
     </div>
-  </div>-->
+  </div>
+
 
   <footer class="site-footer">
     <div class="container">
